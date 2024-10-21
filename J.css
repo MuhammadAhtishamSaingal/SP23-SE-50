@@ -940,7 +940,7 @@ body{
             row-gap: 10px;
         }
         #img2-div {
-            width: 38%;
+            width: 43%;
             margin-right:unset;
             text-align: center;
         }
@@ -1022,7 +1022,50 @@ body{
         #form-txt2 {
             font-size: 11px;
         }
-        
+        #img7 {
+            width: 100%;
+        }
+        #maindiv-imgsec3 {
+            width: 100%;
+            display: grid;
+            /* justify-content: space-evenly; */
+            margin-left: unset;
+            row-gap: 10px;
+        }
+        #imgsec3-div1 {
+            max-width: 95%;
+   
+            margin: 0 auto;
+        }
+        #BandG{
+            font-size: 30px;
+        }
+        #img1-div {
+            width: 43%;
+        }
+        #img8-div {
+            width: 100%;
+        }
+        #imgsec3-div2 {
+            display: grid;
+            gap: 3%;
+        }
+        #img9-div{
+            width: 100%;
+        }
+        #img10-div{
+            width: 100%;
+        }
+        #imgsec3-div2{
+            margin-right: unset;
+        }
+        #imgsec3-div3{
+            margin-right: unset;
+        }
+        #imgsec3-div2 {
+            max-width: 85%;
+            margin: 0 auto;
+        }
         
     }
     
