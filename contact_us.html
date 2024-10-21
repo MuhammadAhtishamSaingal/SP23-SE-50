@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Address Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+    </style>
+</head>
+<body>
+    <form class="col-md-8 col-lg-6">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="form-container">
+                    <h2 class="mb-4">Shipping Address</h2>
+                    <form action="https://www.google.com">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address <span class="">*</span></label>
+                            <input type="email" class="form-control" id="email" name="email" >
+                            <div class="form-text text-danger errormessage text-danger" id="emailerror" style="display: none;">* Please Enter Email Address</Address></div>
+
+                            <div class="form-text"></div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="first-name" class="form-label">First Name <span class="">*</span></label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" >
+                                <div class="form-text text-danger errormessage text-danger" id="first-nameerror" style="display: none;">* Please Enter First Name</div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="last-name" class="form-label">Last Name <span class="">*</span></label>
+                                <input type="text" class="form-control" id="last-name" name="last-name" >
+                                <div class="form-text text-danger errormessage text-danger" id="last-nameerror" style="display: none;">* Please Enter Last Name</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Street Address <span class="">*</span></label>
+                            <input type="text" class="form-control" id="address" name="address" >
+                            <div class="form-text text-danger errormessage text-danger" id="addresserror" style="display: none;">* Please Enter Street Address</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="country" class="form-label">Country <span class="">*</span></label>
+                            <select class="form-select" id="country" name="country" >
+                                <option value="Pakistan">Pakistan</option>
+                                <!-- Add more countries as needed -->
+                            </select>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="state" class="form-label">State/Province</label>
+                                <input type="text" class="form-control" id="state" name="state">
+                                <div class="form-text text-danger errormessage text-danger" id="stateerror" style="display: none;">* Please Enter State/Province</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="city" class="form-label">City <span class="">*</span></label>
+                                <select class="form-select" id="city" name="city" >
+                                    <option value="" disabled selected>-- Select City --</option>
+                                    <option selected>Sahiwal</option>
+                                    <option value="1">Faisalabad</option>
+                                    <option value="2">Lahore</option>
+                                    <option value="3">Karachi</option>
+                
+                                    <!-- Add cities as needed -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="zip" class="form-label">Zip/Postal Code</label>
+                                <input type="text" class="form-control" id="zip" name="zip">
+                                <div class="form-text text-danger errormessage text-danger" id="ziperror" style="display: none;">* Please Enter Zip/Postal Code</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone Number <span class="">*</span></label>
+                                <input type="tel" class="form-control" id="phone" name="phone" >
+                                <div class="form-text text-danger errormessage text-danger" id="phoneerror" style="display: none;">* Please Enter Phone Number</div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+   
+</body>
+</html>
+<script>
+
+    var form = document.querySelector("form");
+    
+    form.addEventListener("submit",(event)=>{
+        event.preventDefault();
+    
+        var check = true;
+    
+        var inputtag = document.getElementsByTagName("input");
+    
+        for(let i=0;i<inputtag.length;i++){
+            
+            var error = document.getElementById(inputtag[i].id + "error");
+    
+            if(inputtag[i].value === ''){
+                error.style.display = 'block';
+                check = false;
+            }
+            else{
+                error.style.display = 'none'
+            }
+    
+        }
+    
+        if(check){
+            alert("Form Submitted Successfully")
+            form.submit();
+        }
+    
+    });
+    </script>

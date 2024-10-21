@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="J.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>J. Junaid Jamshed Official Website</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
             <p class="navbar1-button">TRACKING INFO</p>
             <p class="navbar1-button">CORPORATE INQUIRY</p>
             <p class="navbar1-button">PKR</p>
-            <select class="select" name="currency" id="currency" aria-label="Select Currency">
+            <select class="select" name="currency" id="currency">
                 <option value="PKR">PKR</option>
                 <option value="AUD">AUD</option>
                 <option value="GBP">GBP</option>
@@ -27,10 +28,9 @@
                 <option value="INR">INR</option>
                 <option value="SAR">SAR</option>
             </select>
-            
         </div>
         <div class="nav2">
-            <i class="icon fas fa-shopping-bag" aria-label="Shopping Bag"></i>
+         <a href="contact_us.html"><img  src="Images/cart.png" style="width: 20px;" alt=""></a>
             <i class="icon fa-solid fa-magnifying-glass"></i>
             <input class="search" type="text" placeholder="Search">
         </div>
@@ -44,55 +44,323 @@
 
 
     <!-- navbar2 -->
-    <div class="navbar2">
+    <div id="navbar2">
         <div id="navbar2-btn">NEW ARRIVALS 
             <div id="dropdown1">
-                <div id="dropdown-sec-1"> 
-                    <h2 id="item-head">Midsummer Collection '24</h2>
-                    <ul>
-                        <li id="items">Unstitched Collection</li>
-                        <li id="items">Stitched Collection</li>
-                        <li id="items">Kurti Collection</li>
-                        <li id="items">Trousers Collection</li>
-                        <li id="items">Teen Girls Collection</li>
-                        <li id="items">Kid Girls Collection</li>
-                    </ul>
+                <div id="dropdown-sec-1">
+                    <h2 id="item" >Featured Collection</h2>
+                    <li id="items">Bahrain-Women Unstitched</li>
+                    <li id="items">Expression Series All-ages-of-him</li>
+                    <li id="items">Matching Separates</li>
                 </div>
                 <div id="dropdown-sec-1">
-                    <h2 id="item">Matching Separates</h2>
-                    <h2 id="item-head">MEN - Midsummer '24</h2>
-                    <ul>
-                        <li id="items">Kameez Shalwar Collection</li>
-                        <li id="items">Kurta Collection</li>
-                        <li id="items">Waistcoat Collection</li>
-                        <li id="items">Unstitched Collection</li>
-                    </ul>
+                    
+                    <h2 id="item-head" >Midsummer Collection '24</h2>
+                    <li id="items">Unstitched Collection</li>
+                    <li id="items">Stitched Collection</li>
+                    <li id="items">Kurti Collection</li>
+                    <li id="items">Trousers Collection</li>
+                    <li id="items">Teen Girls Collection</li>
+                    <li id="items">Kid Girls Collection</li>
                 </div>
-                
+                <div id="dropdown-sec-1">
+                    <h2 id="item" >Matching Separates</h2>
+                    <h2 id="item-head">MEN - Midsummer '24</h2>
+                    <li id="items">Kameez Shalwar Collection</li>
+                    <li id="items">Kurta Collection</li>
+                    <li id="items">Waistcoat Collection</li>
+                    <li id="items">Unstitched Collection</li>
+                </div>
+                <div id="dropdown-sec-1">
+                    <h2 id="item-head" >Boys & Girls - Tehwar Eid-edit</h2>
+                    <li id="items">Teen Girls Collection</li>
+                    <li id="items">Teen Boys Collection</li>
+                    <li id="items">Kid Girls Collection</li>
+                    <li id="items">Kid Boys Collection</li>
+                    <li id="items">Infant Girls Collection</li>
+                    <li id="items">Infant Girls Collection</li>
+
+                </div>
+                <div id="dropdown-sec-1">
+                    <img src="Images/dropdown1.webp" alt="">
+
+                </div>
+
+
             </div>
         </div>
 
-        <div id="navbar2-btn">CAST & CREW
-            
+        <div id="navbar2-btn">
+            <img src="Images/crew.svg" style="width: 120px;" alt="">
+            <div id="dropdown2">
+                <div id="dropdown-sec-2">
+                    <h2 id="item-head" >MEN</h2>
+                    <li id="items">Kameez Shalwar</li>
+                    <li id="items">Kurta</li>
+                    <li id="items">Trouser</li>
+                    <li id="items">Waiscoat</li>
+                    <li id="items">Shawl</li>
+                    <li id="items">Unstitched</li>
+                    <li id="items">Footwear</li>
+                </div>
+                <div id="dropdown-sec-2">
+                    <img id="img-dropdown2" src="Images/dropdown2.webp" alt="">
+                </div>
+            </div>
         </div>
-        <div id="navbar2-btn">WOMEN</div>
-        <div id="navbar2-btn">MEN</div>
-        <div id="navbar2-btn">BOYS & GIRLS</div>
-        <div id="navbar2-btn">FRAGRANCES</div>
-        <div id="navbar2-btn">MAKEUP</div>
+
+        <div id="navbar2-btn">WOMEN
+            <div id="dropdown3">
+                <div id="dropdown-sec-3">
+                    <img src="Images/dropdown3.webp" alt="">
+                </div>
+                <div id="dropdown-sec-3">
+                    <h2 id="item-head" >Mama & Me</h2>
+                    <h2 id="item-head" >Kurti</h2>
+                    <li id="items">Formal Kurti</li>
+                    <h2 id="item-head" >Unstitched</h2>
+                    <li id="items">1 Piece</li>
+                    <li id="items">2 Piece</li>
+                    <li id="items">3 Piece</li>
+                    <h2 id="item-head" >Stitched</h2>
+
+                </div>
+                <div id="dropdown-sec-3">
+                    <h2 id="item-head" >Formals</h2>
+                    <li id="items">Formal Stitched</li>
+                    <li id="items">Formal Untitched</li>
+                    <h2 id="item" >Matching Separates</h2>
+                    <h2 id="item-head" >Neerang-Handwoven</h2>
+                    <h2 id="item-head" >Modest Wear(Abaya)</h2>
+                    <h2 id="item-head" >Saree</h2>
+                    <h2 id="item-head" >Stoles-Shawls</h2>
+                </div>
+                <div id="dropdown-sec-3">
+                    <h2 id="item-head" >Bottom Wears</h2>
+                    <h2 id="item-head" >Prayer Mats</h2>
+                    <h2 id="item-head" >Bags</h2>
+                    <h2 id="item-head" >Jewellery</h2>
+                    <h2 id="item-head" >Footwear</h2>
+                    <h2 id="item-head" >Monochrome</h2>
+                </div>
+            </div>
+        </div>
+        <div id="navbar2-btn">MEN
+            <div id="dropdown4">
+                <div id="dropdown-sec-4">
+                    <img src="Images/dropdown4.webp" alt="">
+                </div>
+                <div id="dropdown-sec-4">
+                    <h2 id="item-head" >Kurta Pajama</h2>
+                    <h2 id="item-head" >Kamez Shalwar</h2>
+                    <li id="items">Casual</li>
+                    <li id="items">Semi-Formal</li>
+                    <li id="items">Formal</li>
+                    <li id="items">Exclusive</li>
+                    <h2 id="item-head" >Kurta</h2>
+                    <li id="items">Casual</li>
+                    <li id="items">Semi-Formal</li>
+                    <li id="items">Formal</li>
+                    <li id="items">Formal Kurta</li>
+
+                </div>
+                <div id="dropdown-sec-4">
+                    <h2 id="item-head" >Like Father Like Son</h2>
+                    <h2 id="item-head" >Caps</h2>
+                    <h2 id="item-head" >Waiscoat</h2>
+                    <h2 id="item-head" >Pocket Square</h2>
+                    <h2 id="item-head" >Unstitched Fabric</h2>
+                    <li id="items">Platinum Class</li>
+                    <li id="items">Gold Class</li>
+                    <li id="items">Silver Class</li>
+                    <li id="items">Boski</li>
+                    <li id="items">Latha</li>
+
+                </div>
+                <!-- <div id="dropdown-sec-4">
+                    <h2 id="item-head" >Bottom</h2>
+                    <h2 id="item-head" >Footwear</h2>
+                    <li id="items">Embroidered</li>
+                    <li id="items">Trendy</li>
+                    <h2 id="item-head" >Underwear</h2>
+                    <li id="items">Modal</li>
+                    <li id="items">Cotton</li>
+
+                </div> -->
+                
+                <div id="dropdown-sec-4">
+                    <h2 id="item-head" >Groom's Collection</h2>
+                    <li id="items">Sherwani</li>
+                    <li id="items">Turban</li>
+                    <h2 id="item-head" >Underwear</h2>
+                    <li id="items">Khussa</li>
+                    <li id="items">Special Kurta</li>
+                    <li id="items">Teen Boys</li>
+                    <li id="items">Kid Boys</li>
+
+                </div>
+            </div>
+        </div>
+        <div id="navbar2-btn">BOYS & GIRLS
+            <div id="dropdown5">
+                <div id="dropdown-sec-5">
+                    <h2 id="item-head" >Teen Girls</h2>
+                    <li id="items">Stitched Collection</li>
+                    <li id="items">Formal</li>
+                    <li id="items">Kurti</li>
+                    <li id="items">Trousers</li>
+
+                </div>
+                <div id="dropdown-sec-5">
+                    <h2 id="item-head" >Teen Boys</h2>
+                    <li id="items">Kameez Shalwar</li>
+                    <li id="items">Kurta</li>
+
+                </div>
+                <div id="dropdown-sec-5">
+                    <h2 id="item-head" >Kid Girls</h2>
+                    <li id="items">Stitched Collection</li>
+                    <li id="items">Formal</li>
+                    <li id="items">Kurti</li>
+                    <li id="items">Trousers</li>
+                    <li id="items">Footwear</li>
+                    <li id="items">Jewellery</li>
+
+                </div>
+                <div id="dropdown-sec-5">
+                    <h2 id="item-head" >Kid Boys</h2>
+                    <li id="items">Kameez Shalwar</li>
+                    <li id="items">Kurta</li>
+                    <li id="items">Kids Bottom</li>
+                </div>
+                <div id="dropdown-sec-5">
+                    <h2 id="item-head" >Infant</h2>
+                    <li id="items">Infant Boys</li>
+                    <li id="items">Infant Girls</li>
+                    <li id="items">Kids Bottom</li>
+                </div>
+            </div>
+        </div>
+        <div id="navbar2-btn">FRAGRANCES
+            <div id="dropdown6">
+                <div id="dropdown-sec-6">
+                 <img src="Images/dropdown6.webp" alt="">
+                </div>
+                <div id="dropdown-sec-6">
+                    <h2 id="item-head" >For Men</h2>
+                    <li id="items">Perfume</li>
+                    <li id="items">Attar</li>
+                    <li id="items">Body Spray</li>
+                    <li id="items">Beard Oil</li>
+                </div>
+                <div id="dropdown-sec-6">
+                    <h2 id="item-head" >For Women</h2>
+                    <li id="items">Perfume</li>
+                    <li id="items">Gift Set</li>
+                    <li id="items">Body Spray</li>
+                </div>
+                <div id="dropdown-sec-6">
+                    <h2 id="item-head" >Other</h2>
+                    <li id="items">Reed DIffuser</li>
+                </div>
+            </div>
+        </div>
+        <div id="navbar2-btn">MAKEUP
+            <div id="dropdown7">
+                <div id="dropdown-sec-7">
+                    <h2 id="item-head" >Face</h2>
+                    <li id="items">Blusher</li>
+                    <li id="items">Cream & Foundation</li>
+                    <li id="items">Powder</li>
+                    <li id="items">Other</li>
+                </div>
+                <div id="dropdown-sec-7">
+                    <h2 id="item-head" >Eyes</h2>
+                    <li id="items">Eye Liner</li>
+                    <li id="items">Eye Pencil</li>
+                    <li id="items">Eye Shadow</li>
+                </div>
+                <div id="dropdown-sec-7">
+                    <h2 id="item-head" >Lips</h2>
+                    <li id="items">Lip Stick</li>
+                    <li id="items">Lip Gloss</li>
+                    <li id="items">Other</li>
+                </div>
+                <div id="dropdown-sec-7">
+                   <img id="img-dropdown7" src="Images/dropdown7.webp" alt="">
+                </div>
+            </div>
+        </div>
         <div id="navbar2-btn">CATALOGUE</div>
     </div>
     <p class="p">&nbsp</p>
 </div>
 
 
+
+
     <!-- Banners -->
-     <div class="banner-div">
+     <!-- Slideshow container -->
+     <div id="carouselExampleDark" class="carousel carousel-dark carousel-fade pb-2" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"
+                aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- First Slide -->
+            <div class="carousel-item active" data-bs-interval="2000">
+                <a href="">  <img src="Images/web-banner_1_.webp" style="width:100%"></a>
+                
+            </div>
+
+            <!-- Second Slide -->
+            <div class="carousel-item" data-bs-interval="2000">
+                <a href=""> <img src="Images/banner_2.webp" style="width:100%"></a>
+                     </div>
+
+            <!-- Third Slide -->
+            <div class="carousel-item" data-bs-interval="2000">
+                <a href=""> <img src="Images/web-banner3.webp" style="width:100%"></a>
+                  </div>
+
+    
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+
+     <!-- <div class="banner-div">
         <img class="banner-img" src="Images/web-banner_1_.webp" alt="">
-        <!-- <img class="banner-img" src="banner_2.webp" alt="">
+        <img class="banner-img" src="banner_2.webp" alt="">
         <img class="banner-img" src="web-banner3.webp" alt="">
-        <img class="banner-img" src="web-banner4.webp" alt=""> -->
-     </div>
+        <img class="banner-img" src="web-banner4.webp" alt="">
+     </div> -->
 
 
      <!-- images Section 1 -->
@@ -232,13 +500,13 @@
             </div>
             <div id="ftr-div2">
                 <h3 id="ftr-txt1">CUSTOMER SERVICE</h3>
-                <p id="ftr-txt2">Contact Us</p>
-                <p id="ftr-txt2">Delivery & Orders</p>
-                <p id="ftr-txt2">Returns & Exchanges</p>
-                <p id="ftr-txt2">Terms & Conditions</p>
-                <p id="ftr-txt2">Privacy Policy</p>
-                <p id="ftr-txt2">Track My Order</p>
-                <p id="ftr-txt2">Payment Guide</p>
+                <a href="J.html" id="ftr-txt2">Contact Us</a>
+                <a href="J.html" id="ftr-txt2">Delivery & Orders</a>
+                <a href="J.html" id="ftr-txt2">Returns & Exchanges</a>
+                <a href="J.html" id="ftr-txt2">Terms & Conditions</a>
+                <a href="J.html" id="ftr-txt2">Privacy Policy</a>
+                <a href="J.html" id="ftr-txt2">Track My Order</a>
+                <a href="J.html" id="ftr-txt2">Payment Guide</a>
             </div>
             <div id="ftr-div3">
                 <h3 id="ftr-txt1">COMPANY</h3>
@@ -250,12 +518,82 @@
             <div id="ftr-div4">
                 <h3 id="ftr-txt1">FOLLOW US</h3>
                 <div class="social-icons">
-                    <i id="fb-icon" class="fa-brands fa-facebook"></i>
-                   
+                    <a href="#" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.596 0 0 .596 0 1.326v21.348C0 23.405.596 24 1.326 24h11.495v-9.294H9.692v-3.622h3.129V8.413c0-3.1 1.892-4.788 4.656-4.788 1.324 0 2.463.099 2.796.143v3.24h-1.918c-1.504 0-1.795.714-1.795 1.761v2.308h3.59l-.468 3.622h-3.122V24h6.116C23.405 24 24 23.405 24 22.674V1.326C24 .596 23.405 0 22.675 0z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 4.557a9.827 9.827 0 0 1-2.828.775A4.936 4.936 0 0 0 23.337 3a9.868 9.868 0 0 1-3.127 1.196A4.923 4.923 0 0 0 16.616 2c-2.72 0-4.924 2.203-4.924 4.917 0 .386.045.762.13 1.122A13.975 13.975 0 0 1 1.671 3.149a4.902 4.902 0 0 0-.666 2.474c0 1.708.87 3.215 2.189 4.099a4.904 4.904 0 0 1-2.228-.617v.062c0 2.385 1.698 4.374 3.953 4.827a4.936 4.936 0 0 1-2.224.085c.626 1.951 2.444 3.374 4.597 3.414a9.874 9.874 0 0 1-6.102 2.105c-.396 0-.786-.023-1.174-.068A13.95 13.95 0 0 0 7.548 21c9.14 0 14.13-7.54 14.13-14.074 0-.214-.005-.428-.014-.641A10.06 10.06 0 0 0 24 4.557z"/></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186c-.3-1.19-1.225-2.129-2.388-2.45C18.982 3.224 12 3.224 12 3.224s-6.982 0-9.11.512C1.729 4.057.803 4.996.503 6.186c-.488 1.946-.498 6.004-.498 6.004s.01 4.058.498 6.004c.3 1.19 1.225 2.129 2.388 2.45C5.018 20.776 12 20.776 12 20.776s6.982 0 9.11-.512c1.163-.321 2.088-1.26 2.388-2.45.488-1.946.498-6.004.498-6.004s-.01-4.058-.498-6.004zM9.768 15.499v-6.998l6.43 3.501-6.43 3.497z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.347 3.608 1.322.974.974 1.259 2.242 1.321 3.608.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.069 4.849-.062 1.366-.347 2.633-1.321 3.608-.974.974-2.242 1.259-3.608 1.321-1.265.058-1.645.069-4.849.069-3.204 0-3.584-.012-4.849-.069-1.366-.062-2.633-.347-3.608-1.321-.974-.974-1.259-2.242-1.321-3.608-.058-1.265-.069-1.645-.069-4.849 0-3.204.012-3.584.069-4.849.062-1.366.347-2.633 1.321-3.608.974-.974 2.242-1.259 3.608-1.321 1.265-.058 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.053.072 5.765.13 4.673.434 3.773 1.334 2.873 2.234 2.569 3.326 2.511 4.614.945 9.333.945 14.667 2.511 19.386c.058 1.288.362 2.38 1.262 3.28.9.9 1.992 1.204 3.28 1.262 1.279.058 1.688.072 4.947.072s3.668-.014 4.947-.072c1.288-.058 2.38-.362 3.28-1.262.9-.9 1.204-1.992 1.262-3.28.058-1.279.072-1.688.072-4.947s-.014-3.668-.072-4.947c-.058-1.288-.362-2.38-1.262-3.28-.9-.9-1.992-1.204-3.28-1.262-1.279-.058-1.688-.072-4.947-.072zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162 0 3.403 2.759 6.162 6.162 6.162 3.403 0 6.162-2.759 6.162-6.162 0-3.403-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zM18.406 4.594c0 .796-.645 1.441-1.441 1.441s-1.441-.645-1.441-1.441.645-1.441 1.441-1.441 1.441.645 1.441 1.441z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Pinterest">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.004 0C5.373 0 0 5.373 0 12.004c0 5.237 3.354 9.686 8.019 11.264-.111-.957-.209-2.428.043-3.475.227-.974 1.466-6.189 1.466-6.189s-.373-.746-.373-1.849c0-1.732 1.005-3.025 2.26-3.025 1.064 0 1.578.799 1.578 1.756 0 1.071-.68 2.672-1.032 4.157-.292 1.236.618 2.242 1.834 2.242 2.202 0 3.896-2.32 3.896-5.661 0-2.956-2.13-5.021-5.173-5.021-3.528 0-5.608 2.646-5.608 5.382 0 1.064.411 2.207.924 2.827.101.121.115.227.084.35-.092.381-.301 1.237-.341 1.407-.053.227-.174.277-.402.167-1.498-.691-2.431-2.86-2.431-4.604 0-3.749 2.724-7.204 7.867-7.204 4.125 0 7.293 2.953 7.293 6.89 0 4.078-2.573 7.361-6.142 7.361-1.197 0-2.324-.621-2.71-1.354l-.735 2.794c-.266 1.072-.986 2.413-1.474 3.235 1.106.343 2.278.528 3.505.528 6.631 0 12.004-5.373 12.004-12.004C24.008 5.373 18.635 0 12.004 0z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.23 0H1.771C.791 0 0 .772 0 1.727v20.545C0 23.228.791 24 1.771 24H22.23C23.209 24 24 23.228 24 22.273V1.727C24 .772 23.209 0 22.23 0zM7.121 20.452H3.569V9.047h3.552v11.405zM5.346 7.748c-1.137 0-2.059-.92-2.059-2.059 0-1.137.922-2.059 2.059-2.059s2.059.922 2.059 2.059c0 1.138-.922 2.059-2.059 2.059zM20.452 20.452h-3.553v-5.825c0-1.388-.025-3.176-1.937-3.176-1.937 0-2.233 1.514-2.233 3.075v5.926H9.177V9.047h3.412v1.556h.049c.476-.902 1.636-1.852 3.369-1.852 3.601 0 4.267 2.37 4.267 5.454v6.247z"/></svg>
+                    </a>
                 </div>
 
             </div>
        </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
 </body>
+
 </html>
+<script>
+
+let slideIndex = 0;
+  showSlides();
+
+  // Function to show slides automatically
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+
+  // Function to manually navigate to the next/previous slide
+  function plusSlides(n) {
+    showSlideManually(slideIndex += n);
+  }
+
+  // Function to show specific slide
+  function currentSlide(n) {
+    showSlideManually(slideIndex = n);
+  }
+
+  // Function to manually show the slides based on navigation
+  function showSlideManually(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+
+
+</script>

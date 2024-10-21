@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .landing-page {
+            height: 100vh;
+            background-image: url('https://www.junaidjamshed.com/media/wysiwyg/mid006.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+        /* Black Border Area for the Image */
+        .image img {
+            width: 100px; /* Adjusted logo size */
+            margin-bottom: 20px;
+        }
+        /* Green Border Area for the Dropdown */
+        .dropdown select {
+            padding: 15px;
+            width: 100%;
+            max-width: 350px;
+            background-color: rgba(0,0,0,0.31); /* Transparent background */
+            color: white; /* White text color */
+            border: 2px solid white; /* White border */
+            border-radius: 0;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            appearance: none; /* Remove default dropdown arrow */
+        }
+        .dropdown {
+            position: relative;
+            margin-bottom: 15px;
+        }
+      .dropdown::after {
+            content: '\25BC'; /* Down arrow */
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            pointer-events: none;
+        } 
+        .dropdown select:focus {
+            outline: none;
+        }
+        /* Red Border Area for the Button */
+        .button-container {
+            margin-top: 10px;
+        }
+        .button-container button {
+            width: 100%;
+            max-width: 350px;
+            padding: 15px;
+            background-color: rgba(0,0,0,0.31); /* Transparent background */
+            color: white;
+            border: 2px solid white; /* White border */
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px; /* Added letter spacing */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .button-container button:hover {
+            background-color: black; /* White background on hover */
+            color: white; /* Black text on hover */
+        }
+
+        .content {
+    width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-page">
+        <div class="content">
+            <!-- Black Border Area for the Image -->
+            <div class="image">
+                <img src="https://www.junaidjamshed.com/media/email/logo/stores/1/logo.png" alt="Logo">
+            </div>
+
+            <!-- Green Border Area for the Dropdown -->
+            <div class="dropdown">
+                <select>
+                    <option value="pakistan">Pakistan</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Red Border Area for the Button -->
+            <div class="button-container">
+               <a href="/J.html"> <button>ENTER</button> </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
