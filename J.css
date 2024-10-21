@@ -783,11 +783,12 @@ body{
     
     }
     
-    #ftr-txt2{
+    #ftr-txt2 {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         color: rgb(48,48,48);
         font-size: 14px;
-        line-height: 10px;
+        line-height: 17px;
+        text-decoration: unset;
     }
     
     #img-ftr3{

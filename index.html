@@ -480,15 +480,22 @@
 
      <!-- Form -->
       <div class="main-form">
+        <form style="    width: 77%;  justify-content: center; display: flex;">
             <div id="form">
                 <p id="form-txt1" >BE THE FIRST</p>
                 <p id="form-txt2">New arrivals. Exclusive previews. First access to <br> sales. Sign up to stay in the know.
                 </p>
                 <div id="input-div">
-                    <input id="input" type="text" placeholder="Enter your email address">
-                    <button id="form-btn">SIGN UP</button>
+                  
+                            <input type="email" placeholder="Enter Your Mail" class="" id="email" name="email" >
+                            <div class="form-text text-danger errormessage text-danger" id="emailerror" style="display: none;">* Please Enter Email Address</Address></div>
+
+                            <div class="form-text"></div>
+                    <button type="submit" id="form-btn">SIGN UP</button>
                 </div>
             </div>
+        </form>
+
       </div>
 
       <!-- Footer -->
@@ -597,3 +604,35 @@ let slideIndex = 0;
 
 
 </script>
+<script>
+
+    var form = document.querySelector("form");
+    
+    form.addEventListener("submit",(event)=>{
+        event.preventDefault();
+    
+        var check = true;
+    
+        var inputtag = document.getElementsByTagName("input");
+    
+        for(let i=0;i<inputtag.length;i++){
+            
+            var error = document.getElementById(inputtag[i].id + "error");
+    
+            if(inputtag[i].value === ''){
+                error.style.display = 'block';
+                check = false;
+            }
+            else{
+                error.style.display = 'none'
+            }
+    
+        }
+    
+        if(check){
+            alert("Form Submitted Successfully")
+            form.submit();
+        }
+    
+    });
+    </script>
