@@ -125,4 +125,17 @@ h1 {
     .left-column, .right-column {
         width: 100%;
     }
+    .info-box {
+        position: fixed;
+        top: 12px;
+        right: 6px;
+        width: 271px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 5px;
+        display: none;
+        text-align: left;
+        z-index: 100;
+    }
 }
