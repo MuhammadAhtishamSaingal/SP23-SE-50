@@ -103,9 +103,9 @@ h1 {
 
 /* Info box styles */
 .info-box {
-    position: absolute;
-    top: 10px;
-    right: -635px;
+    position: fixed;
+    top: 47px;
+    right: 350px;
     width: 271px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.8);
