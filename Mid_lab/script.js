@@ -1,5 +1,3 @@
-
-
 const profileImg = document.getElementById('profile-img');
 const infoBox = document.getElementById('info-box');
 
