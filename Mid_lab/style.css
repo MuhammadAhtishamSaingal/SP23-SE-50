@@ -15,7 +15,7 @@ body {
     margin: 40px auto;
     min-height: 100vh;
     background: white;
-    overflow: auto; /* To clear floats */
+    overflow: auto; 
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
@@ -101,7 +101,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Info box styles */
+
 .info-box {
     position: fixed;
     top: 47px;
