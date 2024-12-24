@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .category-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(33, 147, 176, 0.3);
+            animation: slideUp 0.5s ease-out;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        h3 {
+            color: #2193b0;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-info {
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            animation: buttonPop 0.5s ease-out;
+        }
+
+        .btn-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 147, 176, 0.4);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .table th {
+            background: #f8f9fa;
+            color: #2193b0;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .table tbody tr {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .btn-primary, .btn-dark {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #2193b0;
+            color: white;
+            margin-right: 0.5rem;
+        }
+
+        .btn-dark {
+            background: #343a40;
+            color: white;
+        }
+
+        .btn-primary:hover, .btn-dark:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes buttonPop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        tbody tr:nth-child(1) { animation-delay: 0.1s; }
+        tbody tr:nth-child(2) { animation-delay: 0.2s; }
+        tbody tr:nth-child(3) { animation-delay: 0.3s; }
+        tbody tr:nth-child(4) { animation-delay: 0.4s; }
+        tbody tr:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="category-section">
+        <h3><i class="fas fa-tags"></i> Category</h3>
+        <a href="/admin/category/create" class="btn btn-info">
+            <i class="fas fa-plus"></i>
+            Create New Category
+        </a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-tag"></i> Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < category.length ; i++ ){ %>
+                    <tr>
+                        <td><%= category[i].title %></td>
+                        <td>
+                            <a href="/admin/category/edit/<%= category[i]._id %>" class="btn btn-primary">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a href="/admin/category/delete/<%= category[i]._id %>" class="btn btn-dark">
+                                <i class="fas fa-trash"></i> Del
+                            </a>
+                        </td>
+                    </tr>
+                <% } %>   
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

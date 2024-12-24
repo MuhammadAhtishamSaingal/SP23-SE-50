@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #818cf8;
+            --accent-color: #4f46e5;
+            --background-color: #f8fafc;
+            --card-background: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .payment-form {
+            background: var(--card-background);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .card-input {
+            padding: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            background-color: #f8fafc;
+        }
+
+        .card-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            background-color: white;
+        }
+
+        .payment-method-select {
+            padding: 16px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            margin-bottom: 24px;
+            background-color: #f8fafc;
+            font-weight: 500;
+        }
+
+        .card-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        .card-number-wrapper {
+            position: relative;
+        }
+
+        .invalid-feedback {
+            color: #dc2626;
+            font-size: 0.875em;
+            margin-top: 8px;
+        }
+
+        .order-summary {
+            background: var(--card-background);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+            padding: 30px;
+        }
+
+        .order-summary .item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .order-summary .total {
+            font-size: 1.25em;
+            font-weight: 600;
+            padding-top: 20px;
+            color: var(--primary-color);
+        }
+
+        .btn-place-order {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            border: none;
+            width: 100%;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-place-order:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        h3, h4 {
+            color: var(--text-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .shipping-info {
+            line-height: 1.8;
+        }
+
+        .card-input:focus + .card-icon {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .payment-form {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="payment-form">
+                    <h3>Complete Your Payment</h3>
+                    <form action="/checkout/payment" method="POST" id="paymentForm" novalidate>
+                        <div class="mb-4">
+                            <label class="form-label">Payment Method</label>
+                            <select class="form-select payment-method-select" name="paymentMethod" id="paymentMethod" required>
+                                <option value="credit">Credit Card</option>
+                                <option value="debit">Debit Card</option>
+                                <option value="cod">Cash on Delivery</option>
+                            </select>
+                        </div>
+
+                        <div id="cardDetails">
+                            <div class="mb-4">
+                                <label class="form-label">Card Number</label>
+                                <div class="card-number-wrapper">
+                                    <input type="text" class="form-control card-input" 
+                                           id="cardNumber" name="cardNumber" 
+                                           maxlength="19" placeholder="1234 5678 9012 3456">
+                                    <i class="bi bi-credit-card card-icon"></i>
+                                </div>
+                                <div class="invalid-feedback">Please enter a valid card number</div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label">Expiry Date</label>
+                                    <input type="text" class="form-control card-input" 
+                                           id="expiryDate" name="expiryDate" 
+                                           placeholder="MM/YY" maxlength="5">
+                                    <div class="invalid-feedback">Please enter a valid expiry date</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">CVV</label>
+                                    <input type="text" class="form-control card-input" 
+                                           id="cvv" name="cvv" 
+                                           placeholder="123" maxlength="3">
+                                    <div class="invalid-feedback">Please enter a valid CVV</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-place-order">
+                            Place Order <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="order-summary mb-4">
+                    <h4>Order Summary</h4>
+                    <div class="item d-flex justify-content-between">
+                        <span>Product 1 × 2</span>
+                        <span>$199.98</span>
+                    </div>
+                    <div class="item d-flex justify-content-between">
+                        <span>Product 2 × 1</span>
+                        <span>$99.99</span>
+                    </div>
+                    <div class="total d-flex justify-content-between">
+                        <span>Total Amount</span>
+                        <span>$299.97</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('paymentForm');
+            const paymentMethod = document.getElementById('paymentMethod');
+            const cardDetails = document.getElementById('cardDetails');
+            const cardNumber = document.getElementById('cardNumber');
+            const expiryDate = document.getElementById('expiryDate');
+            const cvv = document.getElementById('cvv');
+
+            // Format card number with spaces
+            cardNumber.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+                let formattedValue = '';
+                for(let i = 0; i < value.length; i++) {
+                    if(i > 0 && i % 4 === 0) {
+                        formattedValue += ' ';
+                    }
+                    formattedValue += value[i];
+                }
+                e.target.value = formattedValue;
+            });
+
+            // Format expiry date
+            expiryDate.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 2) {
+                    value = value.slice(0,2) + '/' + value.slice(2);
+                }
+                e.target.value = value;
+            });
+
+            // Only allow numbers in CVV
+            cvv.addEventListener('input', function(e) {
+                e.target.value = e.target.value.replace(/\D/g, '');
+            });
+
+            // Toggle card details visibility
+            paymentMethod.addEventListener('change', function() {
+                cardDetails.style.display = this.value === 'cod' ? 'none' : 'block';
+            });
+
+            // Form validation
+            form.addEventListener('submit', function(e) {
+                let isValid = true;
+
+                if (paymentMethod.value !== 'cod') {
+                    // Validate card number (Luhn algorithm)
+                    const cardVal = cardNumber.value.replace(/\s/g, '');
+                    if (!isValidCardNumber(cardVal)) {
+                        cardNumber.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        cardNumber.classList.remove('is-invalid');
+                    }
+
+                    // Validate expiry date
+                    const [month, year] = expiryDate.value.split('/');
+                    if (!isValidExpiryDate(month, year)) {
+                        expiryDate.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        expiryDate.classList.remove('is-invalid');
+                    }
+
+                    // Validate CVV
+                    if (cvv.value.length !== 3) {
+                        cvv.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        cvv.classList.remove('is-invalid');
+                    }
+                }
+
+                if (!isValid) {
+                    e.preventDefault();
+                }
+            });
+
+            // Luhn algorithm for card validation
+            function isValidCardNumber(number) {
+                let sum = 0;
+                let isEven = false;
+
+                for (let i = number.length - 1; i >= 0; i--) {
+                    let digit = parseInt(number[i]);
+
+                    if (isEven) {
+                        digit *= 2;
+                        if (digit > 9) {
+                            digit -= 9;
+                        }
+                    }
+
+                    sum += digit;
+                    isEven = !isEven;
+                }
+
+                return sum % 10 === 0;
+            }
+
+            // Expiry date validation
+            function isValidExpiryDate(month, year) {
+                if (!month || !year) return false;
+
+                const currentDate = new Date();
+                const currentYear = currentDate.getFullYear() % 100;
+                const currentMonth = currentDate.getMonth() + 1;
+
+                const expMonth = parseInt(month);
+                const expYear = parseInt(year);
+
+                if (expMonth < 1 || expMonth > 12) return false;
+                if (expYear < currentYear) return false;
+                if (expYear === currentYear && expMonth < currentMonth) return false;
+
+                return true;
+            }
+        });
+    </script>
+</body>
+</html>

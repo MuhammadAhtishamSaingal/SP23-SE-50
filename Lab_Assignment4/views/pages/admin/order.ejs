@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order Number</th>
+                <th>Items</th>
+                <th>Total Amount</th>
+                <th>Shipping Info</th>
+                <th>Payment Info</th>
+                <th>Order Status</th>
+                <th>Order Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < orders.length; i++) { %>
+                <tr>
+                    <td><%= orders[i].orderNumber %></td>
+                    <td>
+                        <ul>
+                            <% orders[i].items.forEach(item => { %>
+                                <li><strong>Product:</strong> <%= item.title %> - <%= item.quantity %> x $<%= item.price %></li>
+                            <% }) %>
+                        </ul>
+                    </td>
+                    <td>$<%= orders[i].totalAmount %></td>
+                    <td>
+                        <strong>Name:</strong> <%= orders[i].shippingInfo.fullName %><br>
+                        <strong>Address:</strong> <%= orders[i].shippingInfo.address %>, <%= orders[i].shippingInfo.city %>, <%= orders[i].shippingInfo.state %> <%= orders[i].shippingInfo.zipCode %><br>
+                        <strong>Phone:</strong> <%= orders[i].shippingInfo.phone %><br>
+                        <strong>Email:</strong> <%= orders[i].shippingInfo.email %>
+                    </td>
+                    <td>
+                        <strong>Method:</strong> <%= orders[i].paymentInfo.paymentMethod %><br>
+                        <strong>Status:</strong> <%= orders[i].paymentInfo.paymentStatus %>
+                    </td>
+                    <td><%= orders[i].orderStatus %></td>
+                    <td><%= new Date(orders[i].orderDate).toLocaleDateString() %></td>
+                  
+                </tr>
+            <% } %>
+        </tbody>
+    </table>    
+</body>
+</html>

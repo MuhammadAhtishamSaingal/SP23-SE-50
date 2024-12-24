@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            padding: 2rem;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(33, 147, 176, 0.1);
+            padding: 2rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        h3 {
+            color: #2193b0;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .controls-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-secondary {
+            border: 2px solid #2193b0;
+            background: transparent;
+            color: #2193b0;
+        }
+
+        .btn-outline-secondary:hover {
+            background: #2193b0;
+            color: white;
+        }
+
+        .btn-info {
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
+            color: white;
+        }
+
+        .btn-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 147, 176, 0.3);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 1rem;
+        }
+
+        .table th, .table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .table th {
+            background: #f8f9fa;
+            color: #2193b0;
+            font-weight: 600;
+        }
+
+        .table tr {
+            transition: all 0.3s ease;
+        }
+
+        .table tr:hover {
+            background: #f8f9fa;
+            transform: scale(1.01);
+        }
+
+        .table img {
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .table img:hover {
+            transform: scale(1.1);
+        }
+
+        .pagination {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .page-item {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .page-link {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #2193b0;
+            color: #2193b0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .page-item.active .page-link {
+            background: #2193b0;
+            color: white;
+        }
+
+        .page-link:hover {
+            background: #2193b0;
+            color: white;
+        }
+
+        .btn-primary, .btn-dark {
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            border-radius: 6px;
+        }
+
+        .btn-primary {
+            background: #2193b0;
+            color: white;
+        }
+
+        .btn-dark {
+            background: #333;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .controls-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h3>Products</h3>
+        
+        <div class="controls-section">
+            <div class="sort-controls">
+                <label class="me-2">Sort by Price:</label>
+                <div class="btn-group">
+                    <a href="/admin/product/<%= currentPage || 1 %>?sort=price_asc" class="btn btn-outline-secondary">
+                        <i class="fas fa-sort-amount-down-alt"></i> Low to High
+                    </a>
+                    <a href="/admin/product/<%= currentPage || 1 %>?sort=price_desc" class="btn btn-outline-secondary">
+                        <i class="fas fa-sort-amount-down"></i> High to Low
+                    </a>
+                </div>
+            </div>
+            <a href="/admin/products/create" class="btn btn-info">
+                <i class="fas fa-plus"></i> Create New Product
+            </a>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Picture</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < products.length ; i++ ){ %>
+                    <tr>
+                        <td><%= products[i]._id %></td>
+                        <td><%= products[i].title %></td>
+                        <td><%= products[i].description %></td>
+                        <td>$<%= products[i].price %></td>
+                        <td><img src="/<%= products[i].picture %>" alt="" style="height: 100px; width: 100px;"></td>
+                        <td><%= products[i].category %></td>
+                        <td>
+                            <a href="/admin/products/edit/<%= products[i]._id %>" class="btn btn-primary">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a href="/admin/products/delete/<%= products[i]._id %>" class="btn btn-dark">
+                                <i class="fas fa-trash"></i> Del
+                            </a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <% for(let index = 1; index <= totalPages; index++ ) { %>
+                    <li class="page-item <%= currentPage === index ? 'active' : '' %>">
+                        <a class="page-link" href="/admin/product/<%= index %>?sort=<%= sort || 'price_asc' %>">
+                            <%= index %>
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

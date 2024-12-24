@@ -1,0 +1,27 @@
+<h3>Products</h3>
+<a href="/admin/products/create" class="btn btn-info">Create New Product</a>
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i=0; i < products.length ; i++ ){  %>
+            <tr>
+                <td><%= products[i]._id %></td>
+                <td><%= products[i].title %></td>
+                <td><%= products[i].description %></td>
+                <td><%= products[i].price %></td>
+                <td>
+                    <a href="/admin/products/edit/<%= products[i]._id %>" class="btn btn-primary">Edit</a>
+                    <a href="/admin/products/delete/<%= products[i]._id %>" class="btn btn-dark">Del</a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>

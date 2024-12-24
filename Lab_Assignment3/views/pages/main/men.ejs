@@ -1,0 +1,154 @@
+<div class="container mt-4">
+    <style>
+        .card {
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+        }
+
+        .card-img-top {
+            transition: transform 0.6s ease;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.08);
+        }
+
+        .overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            transition: color 0.3s ease;
+            animation: slideRight 0.5s ease-out;
+        }
+
+        .card:hover .product-title {
+            color: #4299e1;
+        }
+
+        .product-description {
+            color: #718096;
+            line-height: 1.5;
+            animation: slideRight 0.6s ease-out;
+        }
+
+        .price-section {
+            background: linear-gradient(135deg, #4299e1, #667eea);
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: white;
+            animation: slideUp 0.7s ease-out;
+        }
+
+        .price-amount {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .add-to-cart-btn {
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            background: white;
+            color: #4299e1;
+            border: none;
+            font-weight: 500;
+        }
+
+        .card:hover .add-to-cart-btn {
+            transform: translateY(0);
+        }
+
+        .icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(66, 153, 225, 0.1);
+            margin-right: 10px;
+            animation: rotate 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideRight {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(-180deg); }
+            to { transform: rotate(0); }
+        }
+    </style>
+
+    <div class="row">
+        <% for(let i=0; i < product.length; i++) { %>
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="position-relative overflow-hidden">
+                        <img src="/<%= product[i].picture %>" alt="Product Image" class="card-img-top img-fluid" style="object-fit: cover; height: 300px;">
+                        <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                            <button class="add-to-cart-btn btn mb-3 px-4 py-2 d-flex align-items-center">
+                                <i class="fas fa-shopping-cart me-2"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="title-section mb-3">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-tag text-primary"></i>
+                            </div>
+                            <h5 class="product-title d-inline-block">
+                                <%= product[i].title %>
+                            </h5>
+                        </div>
+                        
+                        <div class="description-section mb-3">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-info-circle text-primary"></i>
+                            </div>
+                            <p class="product-description mb-0">
+                                <%= product[i].description %>
+                            </p>
+                        </div>
+                        
+                        <div class="price-section d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-dollar-sign me-2"></i>
+                                <span class="price-amount"><%= product[i].price %></span>
+                            </div>
+                            <span class="badge bg-white text-primary">Best Price</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>

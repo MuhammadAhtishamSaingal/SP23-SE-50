@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Category</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            /* display: grid;
+            place-items: center; */
+        }
+
+        .category-container {
+    background-color: white;
+    max-width: 500px;
+    width: 100%;
+    padding: 2.5rem;
+    max-width: 511px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(33, 147, 176, 0.3);
+    animation: slideUp 0.5s ease-out;
+    margin: 0 auto;
+}
+
+        h1 {
+            color: #2193b0;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 1rem;
+            top: 2.3rem;
+            color: #2193b0;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #2193b0;
+            box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.1);
+            outline: none;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            animation: buttonPop 0.5s ease-out 0.3s backwards;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 147, 176, 0.4);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes buttonPop {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="category-container">
+        <h1>Create New Category</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="category-name">Category Name</label>
+                <i class="fas fa-tag"></i>
+                <input type="text" id="category-name" name="title" placeholder="Enter category name" required>
+            </div>
+            <button type="submit" class="btn">
+                <i class="fas fa-plus"></i>
+                Create Category
+            </button>
+        </form>
+    </div>
+</body>
+</html>
