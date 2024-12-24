@@ -4,6 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>/* Base table styles */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        /* Header styles */
+        .table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        
+        .table th {
+            padding: 12px 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Body styles */
+        .table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #dddddd;
+            vertical-align: top;
+        }
+        
+        .table tbody tr {
+            border-bottom: 1px solid #dddddd;
+            transition: all 0.3s ease;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        /* Zebra striping */
+        .table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+        /* Hover effect */
+        .table tbody tr:hover {
+            background-color: #f5f5f5;
+            transform: translateX(5px);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* List styles within table */
+        .table ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .table li {
+            margin-bottom: 5px;
+            padding: 5px 0;
+            border-bottom: 1px dashed #dddddd;
+        }
+        
+        .table li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Status-specific styles */
+        .table td:nth-child(6) {
+            font-weight: bold;
+        }
+        
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Shipping and Payment Info styles */
+        .table td strong {
+            color: #009879;
+            display: inline-block;
+            min-width: 80px;
+        }</style>
 </head>
 <body>
     <table class="table">
