@@ -7,52 +7,61 @@
     <style>/* Base table styles */
         .table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             margin: 25px 0;
             font-size: 14px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
             overflow: hidden;
-            animation: fadeIn 0.5s ease-in;
+            animation: tableAppear 0.8s ease-out;
+            background: white;
         }
         
         /* Header styles */
         .table thead tr {
-            background-color: #009879;
-            color: #ffffff;
+            background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+            color: white;
             text-align: left;
         }
         
         .table th {
-            padding: 12px 15px;
-            font-weight: bold;
+            padding: 16px 20px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            font-size: 13px;
+            transition: all 0.3s ease;
         }
         
         /* Body styles */
         .table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #dddddd;
+            padding: 16px 20px;
+            border-bottom: 1px solid #eef2f7;
             vertical-align: top;
+            transition: all 0.2s ease;
         }
         
         .table tbody tr {
-            border-bottom: 1px solid #dddddd;
             transition: all 0.3s ease;
-            animation: slideIn 0.5s ease-out;
+            animation: rowAppear 0.6s ease-out;
+            animation-fill-mode: both;
         }
         
-        /* Zebra striping */
+        .table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Zebra striping with gradient */
         .table tbody tr:nth-of-type(even) {
-            background-color: #f3f3f3;
+            background: linear-gradient(to right, #f8faff, #ffffff);
         }
         
-        /* Hover effect */
+        /* Enhanced hover effect */
         .table tbody tr:hover {
-            background-color: #f5f5f5;
-            transform: translateX(5px);
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #f0f7ff, #f8faff);
+            transform: translateX(5px) scale(1.01);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
         }
         
         /* List styles within table */
@@ -63,55 +72,106 @@
         }
         
         .table li {
-            margin-bottom: 5px;
-            padding: 5px 0;
-            border-bottom: 1px dashed #dddddd;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: #f8faff;
+            transition: all 0.2s ease;
         }
         
-        .table li:last-child {
-            border-bottom: none;
+        .table li:hover {
+            background: #f0f7ff;
+            transform: translateX(5px);
         }
         
-        /* Status-specific styles */
+        /* Status column styling */
         .table td:nth-child(6) {
-            font-weight: bold;
+            font-weight: 600;
+            position: relative;
         }
         
-        /* Responsive styles */
+        .table td:nth-child(6)::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+            background: #4caf50;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Enhanced shipping and payment info */
+        .table td strong {
+            color: #1e88e5;
+            display: inline-block;
+            min-width: 90px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        /* Responsive design */
         @media screen and (max-width: 768px) {
             .table {
                 display: block;
                 overflow-x: auto;
                 white-space: nowrap;
+                border-radius: 8px;
+            }
+            
+            .table td, .table th {
+                padding: 12px 15px;
             }
         }
         
-        /* Animations */
-        @keyframes fadeIn {
-            from {
+        /* Advanced animations */
+        @keyframes tableAppear {
+            0% {
                 opacity: 0;
+                transform: translateY(-20px);
             }
-            to {
+            100% {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
         
-        @keyframes slideIn {
-            from {
+        @keyframes rowAppear {
+            0% {
                 opacity: 0;
                 transform: translateX(-20px);
             }
-            to {
+            100% {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
         
-        /* Shipping and Payment Info styles */
-        .table td strong {
-            color: #009879;
-            display: inline-block;
-            min-width: 80px;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Stagger animation for rows */
+        .table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+        .table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+        .table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+        .table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+        .table tbody tr:nth-child(5) { animation-delay: 0.5s; }
+        
+        /* Better typography */
+        .table {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
         }</style>
 </head>
 <body>
